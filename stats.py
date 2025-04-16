@@ -2,21 +2,9 @@ def get_num_words(text):
     word_list = text.split() # Splits the entire novel into a list of individual words
     return len(word_list) # Returns the length of the new split list 
 
-def get_character_count(text):
-    count_dict = {}
-    word_list = text.split() # Splits the entire novel into a list of individual words
-    for word in word_list:
-        for character in word:
-            lowercase_character = str.lower(character)
-            if lowercase_character in count_dict:
-                count_dict[lowercase_character] += 1
-            else:
-                count_dict[lowercase_character] = 1
-    return count_dict
-
 def get_sorted_dict(text):
     count_dict = {} # Creates an empty dictionary that we will fill up with characters and their counts
-    report_list = []
+    report_list = [] # Creates a blank list for our report we will return later
     word_list = text.split() # Splits the entire novel into a list of individual words
     for word in word_list: # Iterate over each word in the text
         for character in word: # Iterate over each character in each word
